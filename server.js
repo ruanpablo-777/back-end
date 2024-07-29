@@ -6,6 +6,7 @@ import cors from "cors"
 
 const prisma = new PrismaClient()
 
+const port = process.env.PORT || 3000
 
 const app = express()
 app.use(express.json())
@@ -77,7 +78,7 @@ app.delete("/usuarios/:id", async (req, res) => {
     res.status(200).json({ message: "Usuario deletado com sucesso" })
 })
 
-app.listen(3000)
+app.listen(port)
 
 
 //dgFCXKAbNtB0JKA2
