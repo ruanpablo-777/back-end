@@ -12,6 +12,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+app.get("/", (req, res) => {
+    res.send("hello world")
+})
+
 app.post("/usuarios", async (req, res) => {
     try {
         await prisma.user.create({
